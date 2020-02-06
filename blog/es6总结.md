@@ -1,4 +1,4 @@
-![1580976770752](C:\Users\24744\AppData\Roaming\Typora\typora-user-images\1580976770752.png)
+![es6-1](./pictures/blog/Es6.png)
 
 今天对es6语法进行梳理。也对在公司业务中遇到的相关问题做一个基础回归，脑图是根据阮一峰的《ES6入门教程》写的。
 
