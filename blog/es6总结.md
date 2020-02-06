@@ -1,4 +1,4 @@
-![1580976770752](C:\Users\24744\AppData\Roaming\Typora\typora-user-images\1580976770752.png)
+![es6-1](https://github.com/solerji/Learning-Summary/blob/master/pictures/blog/Es6.png)
 
 今天对es6语法进行梳理。也对在公司业务中遇到的相关问题做一个基础回归，脑图是根据阮一峰的《ES6入门教程》写的。
 
@@ -83,7 +83,7 @@ console.log(newObj.name)
 
 打印结果：
 
-![1580976916318](C:\Users\24744\AppData\Roaming\Typora\typora-user-images\1580976916318.png)
+![es6-2](https://github.com/solerji/Learning-Summary/blob/master/pictures/blog/es6-2.png)
 
 example是我们需要拦截的对象。
 
@@ -117,7 +117,7 @@ console.log(reflectProxy.name)
 
 打印结果：
 
-![1580977260760](C:\Users\24744\AppData\Roaming\Typora\typora-user-images\1580977260760.png)
+![es6-3](https://github.com/solerji/Learning-Summary/blob/master/pictures/blog/es6-3.png)
 
 Reflect对象的操作和Proxy对象的操作一一对应，在Proxy的拦截操作中，可以直接利用Reflect对象直接获取Proxy的默认值。
 
