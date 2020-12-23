@@ -1,8 +1,8 @@
-JavaScript 基础
+## JavaScript 基础
 
-1.基本数据类型(6，5)
+### 1.基本数据类型(6，5)
 
-Number  
+##### Number  
 
 *运算问题，浮点数运算不准确
 
@@ -10,25 +10,23 @@ Number.MIN_VALUE, Number.MAX_VALUE
 
  5e-324 1.7976931348623157e+308
 
-Null (typeof 输出object类型，为空)
+##### Null (typeof 输出object类型，为空)
 
-Undefined(为未定义，typeof 输出undefined类型)
+##### Undefined(为未定义，typeof 输出undefined类型)
 
-String
+##### String
 
-Boolean (true false 输入数字均为数字类型)
-
-
+##### Boolean (true false 输入数字均为数字类型)
 
 其他类型：
 
-Object
+##### Object
 
 
 
-强制类型转换：
+### 强制类型转换：
 
-->String
+**->String**
 
 (1).toString()
 
@@ -44,11 +42,11 @@ Object
 
 对于null和undefined不会调用toString()方法
 
-->Number(数字类型的值在前端为了保持它值的一致，最好在使用前都对它的类型做一个标准转换，否则可能会导致数值不能正确使用，也可能导致浏览器报错)
+**->Number(数字类型的值在前端为了保持它值的一致，最好在使用前都对它的类型做一个标准转换，否则可能会导致数值不能正确使用，也可能导致浏览器报错)**
 
 (1).Number(a)
 
-纯字符串直接转数字
+纯数值字符串直接转数字
 
 带有字符串转换为NaN形式
 
@@ -64,7 +62,7 @@ parseInt()
 
 parseFloat()
 
--> 进制转换
+**-> 进制转换**
 
 十六进制：0x
 
@@ -72,9 +70,9 @@ parseFloat()
 
 二进制可能会导致浏览器无法识别，IE内核可能会对此有不同处理
 
--> Boolean
+**-> Boolean**
 
-1.Boolean()函数
+（1）Boolean()函数
 
 NaN, null,0 => false
 
@@ -82,7 +80,7 @@ NaN, null,0 => false
 
 *对象都是true
 
-2.运算符
+**-> 普通运算符**
 
 强制类型会先将除String转类型换为Number类型。
 
@@ -118,7 +116,180 @@ result = 2 * undefined;
 
 result = 2 * null;
 
+符号 -> 自增(自减同理)
 
+新值：
 
+++a
+
+原值：
+
+a++
+
+例： 陷阱问题
+
+var c = 10; 
+
+c++;
+
+console.log(c++)
+
+例：自增自减理解
+
+​       // var n1 = 10, n2=20;
+
+​        // var n = n1++; // 新值：n1 = 11 原值：n1++ = 10
+
+​        // console.log('n='+n);
+
+​        // //10
+
+​        // console.log('n1='+n1);
+
+​        // //11
+
+​        // n = ++n1; //n1 = 12 ++n1 = 12
+
+​        // console.log('n='+n);
+
+​        // // 12
+
+​        // console.log('n1='+n1);
+
+​        // // 12
+
+​        // n = n2 --;
+
+​        // console.log('n='+n);
+
+​        // //20
+
+​        // console.log('n2='+n2);
+
+​        // //19
+
+​        // n = --n2;
+
+​        // console.log('n='+n);
+
+​        // //18
+
+​        // console.log('n2='+n2);
+
+​        // //18
+
+##### ->逻辑运算(！&&  ||)
+
+隐式类型转换：
+
+为任意数据类型做两次非运算，从其他类型转换为Boolean
+
+(Boolean值)
+
+js中的与（&&）属于短路的与(第一个值为false不看第二个值)
+
+js中的或（||）属于短路的与(第一个值为true不看第二个值)
+
+(非Boolean值)
+
+先转换为Boolean值，再运算(返回值为原值)
+
+与（&&）运算：如果第一个值为true，则返回第二个值
+
+​                          如果第一个值为false,返回第一个值
+
+或（||）运算：如果第一个值为false，则返回第二个值
+
+​                        如果第一个值为true,返回第一个值
+
+##### ->赋值运算符(+=，-=，*=，/=)
+
+##### ->关系运算符(>,<,>=,<=)
+
+对于非数值比较会先转换成数字
+
+如果符号两侧都是字符串，不会转换数字，而会比较字符串中的Unicode编码
+
+任何值和NaN做比较都是false
+
+##### ->相等运算符(==)
+
+将比较值的类型转换为Number类型
+
+Undefined 衍生至null，这两个值做相等判断会返回true
+
+NaN不和任何值相等，包括它本身
+
+isNaN()判断是否为NaN
+
+##### ->不等运算符(!=)
+
+将比较值的类型转换为Number类型
+
+##### ->(===,!==)
+
+不做值的类型转换，类型不同会返回false
+
+##### ->三元运算符
+
+如果比较的值为一个非boolean值那么会先转换成boolean再运算
+
+#### 运算符优先级
+
+##### ()>自增自减>普通运算符>关系运算符>相等，不等运算符>逻辑运算符>赋值运算符>三元运算>,
+
+## 2.语句
+
+代码块：js的代码块只用于分组
+
+条件分支语句：if…else
+
+​                         If…else if …else
+
+​                         switch(条件为true如果不写break会继续向下执行）
+
+​                        *注意switch的判断条件
+
+​                       例：
+
+​        let num = 69;
+
+​      // 方式一
+
+​        switch(num/10) {
+
+​            case 6:
+
+​                console.log('合格');
+
+​                break;
+
+​            default:
+
+​                console.log('不合格');
+
+​                break;
+
+​        }
+
+​       //方式二
+
+​        switch(true) {
+
+​            case num >= 60:
+
+​                console.log('合格');
+
+​                break;
+
+​            default:
+
+​                console.log('不合格');
+
+​                break;
+
+​        }
+
+  for循环
 
 
